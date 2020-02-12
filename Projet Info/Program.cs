@@ -15,12 +15,11 @@ namespace Projet_Info
             for (int i = 0; i < ImageTest.Hauteur; i++)
             {
                 for (int j = 0; j < ImageTest.Largeur; j++)
-                { 
+                {        
                     Console.Write(ImageTest.image[i, j].R + " " + ImageTest.image[i, j].G + " " + ImageTest.image[i, j].B + " ");
                 }
                 Console.WriteLine();
             }
-
             Console.ReadKey();
         }
     }

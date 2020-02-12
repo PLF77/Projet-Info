@@ -311,7 +311,35 @@ namespace Projet_Info
             return value;
         }
 
+        //Nuance de gris
+        public Pixel[,] NuancesDeGris(string filename)
+        {
+            Queue<Pixel> filePixels = new Queue<Pixel>();
 
+            uint sommePixels = 0;
+            for (int i = 0; i < image.GetLength(0); i++)
+            {
+                for (int j = 0; i < image.GetLength(1); j++)
+                {
+                    sommePixels = image[i, j].R + image[i, j].G + image[i, j].B;
+                    if (sommePixels == 0)
+                    {
+                        image[i, j].r = 0;
+                        image[i, j].g = 0;
+                        image[i, j].b = 0;
+                    }
+                    else
+                    {
+                        uint bitGris = sommePixels / 3;
+                        image[i, j].r = bitGris;
+                        image[i, j].g = bitGris;
+                        image[i, j].b = bitGris;
+                    }
+                }
+            }
+
+            return image;
+        }
     }
 }
 
